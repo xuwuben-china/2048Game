@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2048游戏</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+	<div id="wrapper">
+		<div id="title">
+			<h1>2048</h1>
+			<div class="score-box">
+				<div class="score">
+					<p>SCORE</p>
+					<p>0</p>
+				</div>
+				<div class="best-score">
+					<p>BEST SCORE</p>
+					<p>0</p>
+				</div>
+			</div>
+		</div>
+		<div id="content"></div>
+	</div>
+	<script src="index.js"></script>
+	<script>
+		window.onload = function(){
+			var content = document.getElementById("content"),
+				score = document.querySelectorAll(".score p")[1],
+				maxScore = document.querySelectorAll(".best-score p")[1],
+				wrapper = document.getElementById("wrapper");
+			_2048.Game.init({
+				content: content,
+				score: score,
+				maxScore: maxScore,
+				wrapper: wrapper,
+				size: 4
+			}).start();
+		}
+	</script>
+</body>
+</html>
